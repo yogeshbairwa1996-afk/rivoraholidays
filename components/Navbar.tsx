@@ -1,32 +1,58 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md shadow-lg">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a
-          href="#home"
-          className="text-white text-3xl font-bold hover:text-yellow-400 transition"
-        >
-          Rivora Holidays
-        </a>
-
-        <div className="hidden md:flex gap-8 text-white font-medium">
-          <a href="#home" className="hover:text-yellow-400 transition">
-            Home
+    <header className="fixed top-0 left-0 w-full z-50">
+      <nav className="mx-auto mt-4 max-w-7xl rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-2xl">
+        <div className="flex items-center justify-between px-8 py-4">
+          {/* Logo */}
+          <a
+            href="#home"
+            className="text-3xl font-extrabold tracking-wide text-white transition duration-300 hover:text-yellow-400"
+          >
+            Rivora{" "}
+            <span className="text-yellow-400">
+              Holidays
+            </span>
           </a>
 
-          <a href="#about" className="hover:text-yellow-400 transition">
-            About
-          </a>
+          {/* Desktop Menu */}
+          <div className="hidden items-center gap-10 md:flex">
+            <a
+              href="#home"
+              className="text-white transition duration-300 hover:text-yellow-400"
+            >
+              Home
+            </a>
 
-          <a href="#services" className="hover:text-yellow-400 transition">
-            Services
-          </a>
+            <a
+              href="#about"
+              className="text-white transition duration-300 hover:text-yellow-400"
+            >
+              About
+            </a>
 
-          <a href="#contact" className="hover:text-yellow-400 transition">
-            Contact
-          </a>
+            <a
+              href="#services"
+              className="text-white transition duration-300 hover:text-yellow-400"
+            >
+              Services
+            </a>
+
+            <a
+              href="#contact"
+              className="text-white transition duration-300 hover:text-yellow-400"
+            >
+              Contact
+            </a>
+
+            <a
+              href="#contact"
+              className="rounded-full bg-yellow-400 px-6 py-3 font-semibold text-black transition duration-300 hover:scale-105 hover:bg-yellow-300"
+            >
+              Plan Your Trip
+            </a>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
