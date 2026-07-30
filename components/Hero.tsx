@@ -2,92 +2,78 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/hero.jpg')",
-      }}
+      className="relative min-h-screen overflow-hidden pt-24 md:pt-16"
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/35"></div>
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/hero.jpg')",
+          backgroundPosition: "center center",
+        }}
+      />
+
+      {/* Luxury Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/40" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,0.18),transparent_40%)]" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <div className="relative z-10 flex min-h-[calc(100vh-80px)] items-center">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-8">
+          <div className="max-w-3xl">
 
-          <p className="mb-5 text-yellow-400 uppercase tracking-[6px] font-semibold">
-            Holidays • Events • Weddings
-          </p>
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Your Perfect Partner
+              <br />
+              <span className="text-yellow-400">
+                for Travel, Events & Weddings
+              </span>
+            </h1>
 
-          <h1 className="text-white font-extrabold leading-tight text-5xl md:text-7xl lg:text-8xl max-w-5xl">
-            Discover The
-            <span className="block text-yellow-400">
-              World With Luxury
-            </span>
+            <p className="mt-6 text-base leading-8 text-gray-200 md:text-lg">
+              Your one-stop destination for Flights, Hotels, Holidays, Visa
+              Assistance, Corporate Travel, MICE and Destination Weddings —
+              delivered with professionalism, reliability and personalized
+              service.
+            </p>
 
-            <span className="block">
-              Rivora Holidays
-            </span>
-          </h1>
+            <p className="mt-5 text-sm leading-7 text-gray-300 md:text-base">
+              Domestic & International Tour Packages • Flight Bookings • Hotel &
+              Accommodation • Visa Assistance • Corporate Travel • MICE •
+              Destination Weddings • Group Bookings • FIT Packages
+            </p>
 
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-gray-300 leading-9">
-            Experience unforgettable domestic and international journeys,
-            customized holiday packages, corporate travel, group tours,
-            destination weddings, luxury stays and seamless travel planning
-            designed exclusively for you.
-          </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#packages"
+                className="rounded-full bg-yellow-400 px-8 py-4 font-bold text-black transition hover:bg-yellow-300"
+              >
+                Explore Packages
+              </a>
 
-          {/* Buttons */}
-          <div className="mt-10 flex flex-wrap gap-5">
-
-            <a
-              href="#contact"
-              className="rounded-full bg-yellow-400 px-8 py-4 font-bold text-black transition duration-300 hover:scale-105 hover:bg-yellow-300"
-            >
-              Plan Your Trip →
-            </a>
-
-            <a
-              href="#services"
-              className="rounded-full border border-white px-8 py-4 text-white transition duration-300 hover:bg-white hover:text-black"
-            >
-              Explore Services
-            </a>
-
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
-
-            <div>
-              <h2 className="text-4xl font-bold text-yellow-400">1000+</h2>
-              <p className="text-gray-300 mt-2">
-                Happy Travelers
-              </p>
+              <a
+                href="#contact"
+                className="rounded-full border border-white px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-black"
+              >
+                Plan Your Trip
+              </a>
             </div>
 
-            <div>
-              <h2 className="text-4xl font-bold text-yellow-400">50+</h2>
-              <p className="text-gray-300 mt-2">
-                Destinations
-              </p>
-            </div>
+            <div className="mt-12 grid gap-4 text-sm text-white md:grid-cols-3">
+              <div className="rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                🌍 Domestic & International Tours
+              </div>
 
-            <div>
-              <h2 className="text-4xl font-bold text-yellow-400">24/7</h2>
-              <p className="text-gray-300 mt-2">
-                Customer Support
-              </p>
-            </div>
+              <div className="rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                ✈ Flights • Hotels • Visa Assistance
+              </div>
 
-            <div>
-              <h2 className="text-4xl font-bold text-yellow-400">100%</h2>
-              <p className="text-gray-300 mt-2">
-                Personalized Trips
-              </p>
+              <div className="rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                💍 Destination Weddings • Events • MICE
+              </div>
             </div>
 
           </div>
-
         </div>
       </div>
     </section>

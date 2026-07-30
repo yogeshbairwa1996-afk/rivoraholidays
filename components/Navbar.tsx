@@ -1,58 +1,53 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+import { Menu } from "lucide-react";
+
+import NavLinks from "./NavLinks";
+import MobileMenu from "./MobileMenu";
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      <nav className="mx-auto mt-4 max-w-7xl rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-2xl">
-        <div className="flex items-center justify-between px-8 py-4">
-          {/* Logo */}
-          <a
-            href="#home"
-            className="text-3xl font-extrabold tracking-wide text-white transition duration-300 hover:text-yellow-400"
-          >
-            Rivora{" "}
-            <span className="text-yellow-400">
-              Holidays
-            </span>
-          </a>
-
-          {/* Desktop Menu */}
-          <div className="hidden items-center gap-10 md:flex">
-            <a
-              href="#home"
-              className="text-white transition duration-300 hover:text-yellow-400"
-            >
-              Home
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4">
+        <nav className="w-full max-w-7xl rounded-2xl border border-white/10 bg-slate-900/90 backdrop-blur-xl shadow-2xl">
+          <div className="flex h-20 items-center justify-between px-6 lg:px-8">
+            {/* Logo */}
+            <a href="#home" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Rivora Holidays"
+                width={220}
+                height={60}
+                priority
+                className="h-12 w-auto lg:h-14"
+              />
             </a>
 
-            <a
-              href="#about"
-              className="text-white transition duration-300 hover:text-yellow-400"
-            >
-              About
-            </a>
+            {/* Desktop Menu */}
+            <div className="hidden items-center gap-10 md:flex">
+              <NavLinks />
+            </div>
 
-            <a
-              href="#services"
-              className="text-white transition duration-300 hover:text-yellow-400"
+            {/* Mobile */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="text-white md:hidden"
+              aria-label="Open Menu"
             >
-              Services
-            </a>
-
-            <a
-              href="#contact"
-              className="text-white transition duration-300 hover:text-yellow-400"
-            >
-              Contact
-            </a>
-
-            <a
-              href="#contact"
-              className="rounded-full bg-yellow-400 px-6 py-3 font-semibold text-black transition duration-300 hover:scale-105 hover:bg-yellow-300"
-            >
-              Plan Your Trip
-            </a>
+              <Menu size={28} />
+            </button>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
+
+      <MobileMenu
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
+    </>
   );
 }
