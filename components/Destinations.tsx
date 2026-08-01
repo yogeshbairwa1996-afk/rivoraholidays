@@ -1,61 +1,116 @@
+import Image from "next/image";
+
 export default function Destinations() {
+  const destinations = [
+    {
+      image: "/dubai.jpg",
+      title: "Dubai",
+      subtitle: "Luxury • Shopping • Desert Safari",
+    },
+    {
+      image: "/thailand.jpg",
+      title: "Thailand",
+      subtitle: "Beaches • Nightlife • Islands",
+    },
+    {
+      image: "/bali.jpg",
+      title: "Bali",
+      subtitle: "Honeymoon • Nature • Temples",
+    },
+    {
+      image: "/kashmir.jpg",
+      title: "India",
+      subtitle: "Mountains • Beaches • Heritage",
+    },
+    {
+      image: "/maldives.jpg",
+      title: "Maldives",
+      subtitle: "Luxury Water Villas",
+    },
+    {
+      image: "/singapore.jpg",
+      title: "Singapore",
+      subtitle: "Family • Universal Studios",
+    },
+  ];
+
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="destinations"
+      className="rivora-section py-24 text-white"
+    >
+      <div className="rivora-content mx-auto max-w-7xl px-6">
 
-        <h2 className="text-4xl font-bold text-center mb-4">
-          Popular Destinations
-        </h2>
+        {/* Heading */}
 
-        <p className="text-center text-gray-600 mb-12">
-          Explore our most loved travel destinations.
-        </p>
+        <div className="text-center">
 
-        <div className="grid md:grid-cols-3 gap-8">
+          <span className="font-semibold uppercase tracking-[0.30em] text-yellow-400">
+            EXPLORE THE WORLD
+          </span>
 
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-              alt="Bali"
-              className="h-56 w-full object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-2xl font-bold">Bali</h3>
-              <p className="text-gray-600 mt-2">
-                Beaches, temples and unforgettable sunsets.
-              </p>
-            </div>
-          </div>
+          <h2 className="mt-5 text-4xl font-extrabold lg:text-5xl">
+            Popular
+            <span className="text-yellow-400"> Destinations</span>
+          </h2>
 
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
-              alt="Dubai"
-              className="h-56 w-full object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-2xl font-bold">Dubai</h3>
-              <p className="text-gray-600 mt-2">
-                Luxury shopping, skyscrapers and desert adventures.
-              </p>
-            </div>
-          </div>
+          <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-yellow-400"></div>
 
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition duration-300">
-            <img
-              src="https://images.unsplash.com/photo-1548013146-72479768bada"
-              alt="Thailand"
-              className="h-56 w-full object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-2xl font-bold">Thailand</h3>
-              <p className="text-gray-600 mt-2">
-                Crystal-clear beaches and vibrant nightlife.
-              </p>
-            </div>
-          </div>
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-gray-300">
+            Discover handpicked destinations across the world with
+            customized holiday packages designed for unforgettable
+            travel experiences.
+          </p>
 
         </div>
+
+        {/* Cards */}
+
+        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          {destinations.map((item, index) => (
+
+            <div
+              key={index}
+              className="glass-card group overflow-hidden rounded-3xl"
+            >
+
+              <div className="relative h-72 overflow-hidden">
+
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition duration-700 group-hover:scale-110"
+                />
+
+              </div>
+
+              <div className="p-8">
+
+                <h3 className="text-2xl font-bold transition group-hover:text-yellow-400">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-gray-300">
+                  {item.subtitle}
+                </p>
+
+                <a
+                  href="#contact"
+                  className="mt-6 inline-block rounded-full bg-yellow-400 px-6 py-3 font-semibold text-black transition hover:bg-yellow-300"
+                >
+                  Explore Tours
+                </a>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
       </div>
     </section>
   );

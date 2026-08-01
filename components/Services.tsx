@@ -1,134 +1,113 @@
-import {
-  Plane,
-  Hotel,
-  Globe,
-  Map,
-  Users,
-  Briefcase,
-  BadgeCheck,
-  Building2,
-  CalendarDays,
-  Sparkles,
-} from "lucide-react";
-
-const services = [
-  {
-    title: "Flight Booking",
-    description: "Domestic & international flight bookings with the best available fares.",
-    icon: Plane,
-  },
-  {
-    title: "Hotel Booking",
-    description: "Luxury, business and budget hotel reservations across the world.",
-    icon: Hotel,
-  },
-  {
-    title: "International Tours",
-    description: "Explore the world's most beautiful destinations with curated tour packages.",
-    icon: Globe,
-  },
-  {
-    title: "Domestic Tours",
-    description: "Discover incredible India through carefully planned holiday experiences.",
-    icon: Map,
-  },
-  {
-    title: "Group Tours",
-    description: "Well-organized tours for families, friends, schools and corporate groups.",
-    icon: Users,
-  },
-  {
-    title: "FIT Packages",
-    description: "Customized travel plans designed exclusively for individual travelers.",
-    icon: Sparkles,
-  },
-  {
-    title: "Visa Assistance",
-    description: "Reliable documentation and visa support for international travel.",
-    icon: BadgeCheck,
-  },
-  {
-    title: "Corporate Travel",
-    description: "Professional travel management for businesses and executives.",
-    icon: Briefcase,
-  },
-  {
-    title: "Events & Weddings",
-    description: "Destination weddings, celebrations and memorable special events.",
-    icon: CalendarDays,
-  },
-  {
-    title: "MICE",
-    description: "Meetings, Incentives, Conferences and Exhibitions with complete planning.",
-    icon: Building2,
-  },
-  {
-    title: "Customized Holiday Packages",
-    description: "Tailor-made holidays created around your interests and travel style.",
-    icon: Sparkles,
-  },
-];
-
 export default function Services() {
+  const services = [
+    {
+      icon: "✈️",
+      title: "Flight Bookings",
+      description:
+        "Best domestic and international flight deals with hassle-free booking.",
+    },
+    {
+      icon: "🏨",
+      title: "Hotel Reservations",
+      description:
+        "Luxury, business and budget hotels across India & Worldwide.",
+    },
+    {
+      icon: "🌍",
+      title: "Holiday Packages",
+      description:
+        "Customized domestic and international tour packages for every traveler.",
+    },
+    {
+      icon: "🛂",
+      title: "Visa Assistance",
+      description:
+        "Fast and reliable visa guidance for multiple international destinations.",
+    },
+    {
+      icon: "🏢",
+      title: "Corporate Travel",
+      description:
+        "Business travel, conferences, MICE and incentive tours.",
+    },
+    {
+      icon: "💍",
+      title: "Destination Weddings",
+      description:
+        "Luxury destination weddings with complete planning & management.",
+    },
+    {
+      icon: "👨‍👩‍👧‍👦",
+      title: "Group Tours",
+      description:
+        "Family, friends, school, corporate and customized group departures.",
+    },
+    {
+      icon: "🎯",
+      title: "FIT Packages",
+      description:
+        "Personalized holiday itineraries designed exactly to your travel style.",
+    },
+  ];
+
   return (
     <section
       id="services"
-      className="bg-black py-24"
+      className="relative overflow-hidden bg-[#0b0b0b] py-24 text-white"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="h-full w-full bg-[radial-gradient(#facc15_1px,transparent_1px)] [background-size:24px_24px]" />
+      </div>
 
+      <div className="relative mx-auto max-w-7xl px-6">
         {/* Heading */}
-        <div className="mb-16 text-center">
 
-          <p className="font-semibold uppercase tracking-[4px] text-yellow-400">
-            Our Services
-          </p>
+        <div className="text-center">
+          <span className="inline-block rounded-full border border-yellow-500/30 bg-yellow-500/10 px-6 py-2 text-sm font-semibold uppercase tracking-[4px] text-yellow-400">
+            Our Premium Services
+          </span>
 
-          <h2 className="mt-3 text-4xl font-bold text-white md:text-5xl">
-            Complete Travel Solutions
+          <h2 className="mt-8 text-5xl font-extrabold lg:text-6xl">
+            Everything You Need
+            <span className="text-yellow-400"> For Your Journey</span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-gray-400">
-            From flight bookings to destination weddings, Rivora Holidays
-            provides complete travel solutions with premium service and
-            personalized experiences.
-          </p>
+          <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-yellow-400"></div>
 
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-gray-300">
+            Rivora Holidays provides complete travel solutions including Flights,
+            Hotels, Holiday Packages, Corporate Travel, Visa Assistance,
+            Destination Weddings and customized travel experiences worldwide.
+          </p>
         </div>
 
         {/* Cards */}
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <div
-                key={index}
-                className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-yellow-400 hover:shadow-2xl hover:shadow-yellow-500/10"
-              >
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-yellow-400/10 transition-all duration-300 group-hover:bg-yellow-400">
-                  <Icon
-                    size={32}
-                    className="text-yellow-400 transition-all duration-300 group-hover:text-black"
-                  />
-                </div>
-
-                <h3 className="mb-3 text-2xl font-bold text-white">
-                  {service.title}
-                </h3>
-
-                <p className="leading-7 text-gray-400">
-                  {service.description}
-                </p>
-
+        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="group flex flex-col rounded-3xl border border-white/10 bg-[#171717] p-8 transition-all duration-300 hover:-translate-y-3 hover:border-yellow-400 hover:shadow-[0_0_35px_rgba(250,204,21,0.20)]"
+            >
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-yellow-400/10 text-5xl transition group-hover:scale-110 group-hover:bg-yellow-400/20">
+                {service.icon}
               </div>
-            );
-          })}
 
+              <h3 className="text-2xl font-bold group-hover:text-yellow-400">
+                {service.title}
+              </h3>
+
+              <p className="mt-5 flex-grow leading-8 text-gray-300">
+                {service.description}
+              </p>
+
+              <button className="mt-8 rounded-full border border-yellow-400 px-6 py-3 font-semibold text-yellow-400 transition hover:bg-yellow-400 hover:text-black">
+                Learn More →
+              </button>
+            </div>
+          ))}
         </div>
-
       </div>
     </section>
   );

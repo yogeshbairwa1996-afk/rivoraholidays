@@ -2,84 +2,99 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-black py-24"
+      className="rivora-section py-24 text-white"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="rivora-content mx-auto max-w-7xl px-6">
 
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
 
-          {/* Left Content */}
+          {/* Left */}
+
           <div>
 
-            <p className="font-semibold uppercase tracking-[4px] text-yellow-400">
-              About Us
-            </p>
+            <span className="rounded-full border border-yellow-400/30 bg-yellow-400/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-400">
+              About Rivora Holidays
+            </span>
 
-            <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
-              Your Trusted Travel Partner
+            <h2 className="mt-8 text-4xl font-extrabold leading-tight lg:text-5xl">
+              Creating
+              <span className="text-yellow-400">
+                {" "}Memorable Travel Experiences
+              </span>
             </h2>
 
-            <p className="mt-8 leading-8 text-gray-400">
-              Rivora Holidays is a professional travel company based in Jaipur,
-              Rajasthan, dedicated to creating memorable travel experiences
-              across India and around the world.
+            <div className="mt-6 h-1 w-24 rounded-full bg-yellow-400"></div>
+
+            <p className="mt-8 text-lg leading-9 text-gray-300">
+              Rivora Holidays is a premium travel company offering
+              Domestic & International Holiday Packages,
+              Flight Bookings, Hotel Reservations,
+              Visa Assistance, Corporate Travel,
+              Destination Weddings and MICE Services.
             </p>
 
-            <p className="mt-6 leading-8 text-gray-400">
-              We specialize in Domestic & International Tours, Flight Booking,
-              Hotel Reservations, Visa Assistance, Corporate Travel, Group
-              Tours, FIT Packages, MICE, Events and Destination Weddings.
+            <p className="mt-6 text-lg leading-9 text-gray-400">
+              We believe every journey should be stress-free,
+              memorable and perfectly planned.
+              Our dedicated team ensures personalized service,
+              transparent pricing and unforgettable travel
+              experiences for every client.
             </p>
-
-            <p className="mt-6 leading-8 text-gray-400">
-              Our focus is simple — personalized service, transparent pricing,
-              reliable support and unforgettable journeys for every traveler.
-            </p>
-
-            <a
-              href="#contact"
-              className="mt-10 inline-block rounded-full bg-yellow-400 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-300"
-            >
-              Plan Your Journey
-            </a>
 
           </div>
 
-          {/* Right Side */}
-          <div className="rounded-3xl border border-yellow-400/20 bg-white/5 p-10 backdrop-blur-sm">
+          {/* Right */}
 
-            <h3 className="text-3xl font-bold text-white">
-              Why Rivora Holidays?
-            </h3>
+          <div>
 
-            <div className="mt-8 space-y-6">
+            <div className="grid gap-6 sm:grid-cols-2">
 
-              <div className="flex items-start gap-4">
-                <span className="text-2xl text-yellow-400">✓</span>
-                <p className="text-gray-300">
-                  Trusted Travel Experts with personalized planning.
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+
+                <h3 className="text-5xl font-extrabold text-yellow-400">
+                  100+
+                </h3>
+
+                <p className="mt-4 text-lg text-gray-300">
+                  Happy Travellers
                 </p>
+
               </div>
 
-              <div className="flex items-start gap-4">
-                <span className="text-2xl text-yellow-400">✓</span>
-                <p className="text-gray-300">
-                  Best Price Guarantee without compromising quality.
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+
+                <h3 className="text-5xl font-extrabold text-yellow-400">
+                  25+
+                </h3>
+
+                <p className="mt-4 text-lg text-gray-300">
+                  Destinations
                 </p>
+
               </div>
 
-              <div className="flex items-start gap-4">
-                <span className="text-2xl text-yellow-400">✓</span>
-                <p className="text-gray-300">
-                  24×7 Customer Support before, during and after your trip.
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+
+                <h3 className="text-5xl font-extrabold text-yellow-400">
+                  24×7
+                </h3>
+
+                <p className="mt-4 text-lg text-gray-300">
+                  Customer Support
                 </p>
+
               </div>
 
-              <div className="flex items-start gap-4">
-                <span className="text-2xl text-yellow-400">✓</span>
-                <p className="text-gray-300">
-                  Domestic & International holiday experiences tailored for you.
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+
+                <h3 className="text-5xl font-extrabold text-yellow-400">
+                  100%
+                </h3>
+
+                <p className="mt-4 text-lg text-gray-300">
+                  Personalized Service
                 </p>
+
               </div>
 
             </div>

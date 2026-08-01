@@ -13,30 +13,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rivoraholidays.vercel.app"),
+  metadataBase: new URL("https://www.rivoraholidays.com"),
 
   title: {
-    default: "Rivora Holidays | Holidays • Events • Weddings",
+    default:
+      "Rivora Holidays | Best Travel Agency in Jaipur | Tour Packages, Flights & Visa",
     template: "%s | Rivora Holidays",
   },
 
   description:
-    "Rivora Holidays is your trusted travel partner for Domestic Tours, International Tours, Group Tours, FIT Packages, Corporate Travel, Visa Assistance, Events and Destination Weddings.",
+    "Rivora Holidays is a trusted travel agency in Jaipur offering Domestic & International Tour Packages, Flight Bookings, Hotel Reservations, Visa Assistance, Honeymoon Packages, Group Tours, FIT Packages, Corporate Travel, MICE and Destination Weddings.",
 
   keywords: [
     "Rivora Holidays",
+    "Best Travel Agency Jaipur",
     "Travel Agency Jaipur",
+    "Tour Operator Jaipur",
     "Holiday Packages",
-    "Domestic Tours",
-    "International Tours",
-    "Group Tours",
-    "FIT Packages",
+    "Domestic Tour Packages",
+    "International Tour Packages",
+    "Dubai Tour Package",
+    "Thailand Tour Package",
+    "Bali Tour Package",
+    "Singapore Tour Package",
+    "Maldives Tour Package",
+    "Vietnam Tour Package",
+    "Flight Booking Jaipur",
+    "Hotel Booking Jaipur",
     "Visa Assistance",
     "Corporate Travel",
     "Destination Weddings",
-    "Events",
-    "Travel Company India",
-    "Rajasthan Travel Agency",
+    "MICE",
   ],
 
   authors: [
@@ -49,18 +56,36 @@ export const metadata: Metadata = {
 
   publisher: "Rivora Holidays",
 
+  category: "Travel",
+
+  alternates: {
+    canonical: "https://www.rivoraholidays.com",
+  },
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 
   openGraph: {
-    title: "Rivora Holidays",
+    title: "Rivora Holidays | Best Travel Agency in Jaipur",
+
     description:
-      "Explore unforgettable holidays with Rivora Holidays. Domestic Tours, International Tours, Group Tours, FIT Packages, Visa Assistance, Corporate Travel, Events & Weddings.",
-    url: "https://rivoraholidays.vercel.app",
+      "Premium Domestic & International Tour Packages, Flights, Hotels, Visa Assistance, Corporate Travel, MICE and Destination Weddings.",
+
+    url: "https://www.rivoraholidays.com",
+
     siteName: "Rivora Holidays",
+
     locale: "en_IN",
+
     type: "website",
 
     images: [
@@ -77,7 +102,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rivora Holidays",
     description:
-      "Premium Holidays, Tours, Events & Weddings by Rivora Holidays.",
+      "Premium Domestic & International Tour Packages.",
     images: ["/hero.jpg"],
   },
 
@@ -86,19 +111,47 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
-};
-
-export default function RootLayout({
+};export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    name: "Rivora Holidays",
+    url: "https://www.rivoraholidays.com",
+    logo: "https://www.rivoraholidays.com/logo.png",
+    image: "https://www.rivoraholidays.com/hero.jpg",
+    description:
+      "Premium Domestic & International Tour Packages, Flights, Hotels, Visa Assistance, Corporate Travel, MICE and Destination Weddings.",
+    telephone: "+91-9828260533",
+    email: "info@rivoraholidays.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "349, Vaishno Vihar",
+      addressLocality: "Jaipur",
+      addressRegion: "Rajasthan",
+      postalCode: "302029",
+      addressCountry: "IN",
+    },
+    areaServed: "Worldwide",
+    priceRange: "₹₹",
+  };
+
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-white text-black">
+      <body className="bg-[#05070d] text-white antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+
         {children}
       </body>
     </html>
