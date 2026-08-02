@@ -12,29 +12,59 @@ export async function POST(req: Request) {
       to: ["info@rivoraholidays.com"],
       replyTo: email,
       subject: "🌍 New Enquiry - Rivora Holidays",
+
       html: `
-        <h2>New Enquiry</h2>
+        <div style="font-family: Arial, sans-serif; padding:20px; max-width:700px;">
+          <h2 style="color:#d4af37;">
+            🌍 New Enquiry - Rivora Holidays
+          </h2>
 
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Message:</b></p>
+          <table cellpadding="10" cellspacing="0" border="1" style="border-collapse:collapse;width:100%;">
+            <tr>
+              <td><strong>Name</strong></td>
+              <td>${name}</td>
+            </tr>
+            <tr>
+              <td><strong>Email</strong></td>
+              <td>${email}</td>
+            </tr>
+            <tr>
+              <td><strong>Phone</strong></td>
+              <td>${phone}</td>
+            </tr>
+            <tr>
+              <td><strong>Message</strong></td>
+              <td>${message}</td>
+            </tr>
+          </table>
 
-        <p>${message}</p>
+          <br>
+
+          <p>
+            <strong>Website:</strong>
+            https://rivoraholidays.com
+          </p>
+
+          <p>
+            This enquiry was submitted from the Rivora Holidays website.
+          </p>
+        </div>
       `,
     });
 
-    console.log("RESEND RESPONSE =>", data);
+    console.log("Resend Response:", data);
 
-    return NextResponse.json(data);
-
-  } catch (err) {
-    console.error("RESEND ERROR =>", err);
+    return NextResponse.json({
+      success: true,
+      data,
+    });
+  } catch (error) {
+    console.error("Resend Error:", error);
 
     return NextResponse.json(
       {
         success: false,
-        error: err,
+        error: String(error),
       },
       {
         status: 500,
