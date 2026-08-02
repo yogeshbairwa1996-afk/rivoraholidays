@@ -45,8 +45,6 @@ export default function WhyChoose() {
     >
       <div className="rivora-content mx-auto max-w-7xl px-6">
 
-        {/* Heading */}
-
         <div className="text-center">
 
           <span className="font-semibold uppercase tracking-[0.30em] text-yellow-400">
@@ -54,8 +52,10 @@ export default function WhyChoose() {
           </span>
 
           <h2 className="mt-5 text-4xl font-extrabold lg:text-5xl">
-            Why Choose
-            <span className="text-yellow-400"> Rivora?</span>
+            Why Choose{" "}
+            <span className="text-yellow-400">
+              Rivora Holidays?
+            </span>
           </h2>
 
           <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-yellow-400"></div>
@@ -66,8 +66,6 @@ export default function WhyChoose() {
           </p>
 
         </div>
-
-        {/* Cards */}
 
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
