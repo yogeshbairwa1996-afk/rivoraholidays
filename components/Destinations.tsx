@@ -1,32 +1,32 @@
 export default function Destinations() {
   const destinations = [
     {
-      image: "/dubai.jpg",
+      image: "/Dubai.jpg",
       title: "Dubai",
       subtitle: "Luxury • Shopping • Desert Safari",
     },
     {
-      image: "/thailand.jpg",
+      image: "/Thailand.jpg",
       title: "Thailand",
       subtitle: "Beaches • Nightlife • Islands",
     },
     {
-      image: "/bali.jpg",
+      image: "/Bali.jpg",
       title: "Bali",
       subtitle: "Honeymoon • Nature • Temples",
     },
     {
-      image: "/kashmir.jpg",
+      image: "/Kashmir.jpg",
       title: "India",
       subtitle: "Mountains • Beaches • Heritage",
     },
     {
-      image: "/maldives.jpg",
+      image: "/Maldives.jpg",
       title: "Maldives",
       subtitle: "Luxury Water Villas",
     },
     {
-      image: "/singapore.jpg",
+      image: "/Singapore.jpg",
       title: "Singapore",
       subtitle: "Family • Universal Studios",
     },
@@ -63,13 +63,11 @@ export default function Destinations() {
               className="glass-card group overflow-hidden rounded-3xl"
             >
               <div className="relative h-72 overflow-hidden">
-
                 <img
                   src={item.image}
                   alt={item.title}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                 />
-
               </div>
 
               <div className="p-8">
