@@ -60,17 +60,17 @@ export default function Stats() {
           </div>
 
           {/* Right Side */}
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-4 md:gap-8">
             {stats.map((item) => (
               <div
                 key={item.label}
-                className="rounded-3xl border border-white/10 bg-[#171717] p-10 transition duration-300 hover:border-yellow-400 hover:-translate-y-2"
+                className="flex flex-col items-center justify-center rounded-3xl border border-white/10 bg-[#171717] p-6 md:p-10 text-center transition duration-300 hover:border-yellow-400 hover:-translate-y-2 min-h-[180px]"
               >
-                <h3 className="text-6xl font-extrabold text-yellow-400">
+                <h3 className="whitespace-nowrap text-4xl font-extrabold leading-none text-yellow-400 md:text-6xl">
                   {item.number}
                 </h3>
 
-                <p className="mt-5 text-2xl text-gray-300">
+                <p className="mt-5 text-lg text-gray-300 md:text-2xl">
                   {item.label}
                 </p>
               </div>
