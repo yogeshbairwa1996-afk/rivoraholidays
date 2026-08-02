@@ -8,54 +8,33 @@ export async function POST(req: Request) {
     const { name, email, phone, message } = await req.json();
 
     const data = await resend.emails.send({
-      from: "Rivora Holidays <onboarding@resend.dev>",
+      from: "Rivora Holidays <info@rivoraholidays.com>",
       to: ["info@rivoraholidays.com"],
-      subject: "🌍 New Enquiry - Rivora Holidays",
       replyTo: email,
+      subject: "🌍 New Enquiry - Rivora Holidays",
       html: `
-        <div style="font-family:Arial,sans-serif;padding:20px">
-          <h2 style="color:#d4af37;">New Enquiry - Rivora Holidays</h2>
+        <h2>New Enquiry</h2>
 
-          <table cellpadding="8" cellspacing="0" border="1" style="border-collapse:collapse;width:100%;">
-            <tr>
-              <td><strong>Name</strong></td>
-              <td>${name}</td>
-            </tr>
-            <tr>
-              <td><strong>Email</strong></td>
-              <td>${email}</td>
-            </tr>
-            <tr>
-              <td><strong>Phone</strong></td>
-              <td>${phone}</td>
-            </tr>
-            <tr>
-              <td><strong>Message</strong></td>
-              <td>${message}</td>
-            </tr>
-          </table>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${phone}</p>
+        <p><b>Message:</b></p>
 
-          <br/>
-
-          <p>
-            This enquiry was submitted from
-            <strong> rivoraholidays.com</strong>.
-          </p>
-        </div>
+        <p>${message}</p>
       `,
     });
 
-    return NextResponse.json({
-      success: true,
-      data,
-    });
-  } catch (error) {
-    console.error(error);
+    console.log("RESEND RESPONSE =>", data);
+
+    return NextResponse.json(data);
+
+  } catch (err) {
+    console.error("RESEND ERROR =>", err);
 
     return NextResponse.json(
       {
         success: false,
-        error: "Failed to send email",
+        error: err,
       },
       {
         status: 500,
