@@ -1,12 +1,69 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Enquiry Sent Successfully!");
+
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send enquiry.");
+      }
+    } catch (err) {
+      alert("Something went wrong.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section
       id="contact"
       className="rivora-section py-24 text-white"
     >
       <div className="rivora-content mx-auto max-w-7xl px-6">
-
-        {/* Heading */}
 
         <div className="text-center">
 
@@ -33,8 +90,6 @@ export default function Contact() {
 
         <div className="mt-20 grid gap-10 lg:grid-cols-2">
 
-          {/* Contact Details */}
-
           <div className="glass-card rounded-3xl p-10">
 
             <h3 className="text-3xl font-bold">
@@ -44,6 +99,7 @@ export default function Contact() {
             <div className="mt-10 space-y-8">
 
               <div>
+
                 <h4 className="font-semibold text-yellow-400">
                   📍 Office
                 </h4>
@@ -57,6 +113,7 @@ export default function Contact() {
               </div>
 
               <div>
+
                 <h4 className="font-semibold text-yellow-400">
                   📞 Phone
                 </h4>
@@ -68,6 +125,7 @@ export default function Contact() {
               </div>
 
               <div>
+
                 <h4 className="font-semibold text-yellow-400">
                   📧 Email
                 </h4>
@@ -79,6 +137,7 @@ export default function Contact() {
               </div>
 
               <div>
+
                 <h4 className="font-semibold text-yellow-400">
                   🌐 Website
                 </h4>
@@ -91,47 +150,63 @@ export default function Contact() {
 
             </div>
 
-          </div>
-
-          {/* Form */}
-
-          <div className="glass-card rounded-3xl p-10">
+          </div>          <div className="glass-card rounded-3xl p-10">
 
             <h3 className="text-3xl font-bold">
               Send an Enquiry
             </h3>
 
-            <form className="mt-8 space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="mt-8 space-y-6"
+            >
 
               <input
                 type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
                 placeholder="Full Name"
+                required
                 className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none transition focus:border-yellow-400"
               />
 
               <input
                 type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 placeholder="Email Address"
+                required
                 className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none transition focus:border-yellow-400"
               />
 
               <input
                 type="tel"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
                 placeholder="Phone Number"
+                required
                 className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none transition focus:border-yellow-400"
               />
 
               <textarea
                 rows={5}
+                name="message"
+                value={form.message}
+                onChange={handleChange}
                 placeholder="Tell us about your travel plan..."
+                required
                 className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 text-white outline-none transition focus:border-yellow-400"
               />
 
               <button
                 type="submit"
-                className="w-full rounded-xl bg-yellow-400 py-4 font-bold text-black transition hover:bg-yellow-300"
+                disabled={loading}
+                className="w-full rounded-xl bg-yellow-400 py-4 font-bold text-black transition hover:bg-yellow-300 disabled:opacity-50"
               >
-                Send Enquiry
+                {loading ? "Sending..." : "Send Enquiry"}
               </button>
 
             </form>
@@ -141,6 +216,7 @@ export default function Contact() {
         </div>
 
       </div>
+
     </section>
   );
 }
