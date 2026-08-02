@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { X } from "lucide-react";
 import NavLinks from "./NavLinks";
 
@@ -21,13 +22,18 @@ export default function MobileMenu({
       }`}
     >
       <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
-        <h2 className="text-2xl font-bold text-white">
-          Rivora <span className="text-yellow-400">Holidays</span>
-        </h2>
+        <Image
+          src="/logo.png"
+          alt="Rivora Holidays"
+          width={180}
+          height={55}
+          priority
+          className="h-12 w-auto object-contain"
+        />
 
         <button
           onClick={onClose}
-          className="text-white hover:text-yellow-400"
+          className="text-white hover:text-yellow-400 transition"
         >
           <X size={30} />
         </button>
