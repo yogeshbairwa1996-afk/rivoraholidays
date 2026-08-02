@@ -1,3 +1,11 @@
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 export default function Destinations() {
   const destinations = [
     {
@@ -56,7 +64,8 @@ export default function Destinations() {
           </p>
         </div>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Desktop Grid */}
+        <div className="mt-20 hidden gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
           {destinations.map((item, index) => (
             <div
               key={index}
@@ -88,6 +97,53 @@ export default function Destinations() {
               </div>
             </div>
           ))}
+        </div>        {/* Mobile Slider */}
+        <div className="mt-12 md:hidden">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1.15}
+            centeredSlides={true}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+          >
+            {destinations.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="glass-card overflow-hidden rounded-3xl">
+                  <div className="relative h-72 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-gray-300">
+                      {item.subtitle}
+                    </p>
+
+                    <a
+                      href="#contact"
+                      className="mt-6 inline-block rounded-full bg-yellow-400 px-6 py-3 font-semibold text-black transition hover:bg-yellow-300"
+                    >
+                      Explore Tours
+                    </a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
       </div>
