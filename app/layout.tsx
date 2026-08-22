@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -197,7 +196,6 @@ export default function RootLayout({
 
         {children}
 
-        {/* Google Analytics GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8KFXRS0Q1H"
           strategy="afterInteractive"
@@ -222,4 +220,3 @@ export default function RootLayout({
     </html>
   );
 }
-```
