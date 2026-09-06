@@ -22,8 +22,10 @@ export default function MobileMenu({
       }`}
     >
       <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+
+        {/* Rivora Holidays Logo */}
         <Image
-          src="/logo.png"
+          src="/logo-new.png"
           alt="Rivora Holidays"
           width={180}
           height={55}
@@ -34,9 +36,11 @@ export default function MobileMenu({
         <button
           onClick={onClose}
           className="text-white hover:text-yellow-400 transition"
+          aria-label="Close Menu"
         >
           <X size={30} />
         </button>
+
       </div>
 
       <div className="flex flex-col gap-2 px-6 py-8">

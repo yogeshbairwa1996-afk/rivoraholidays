@@ -108,9 +108,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
@@ -122,14 +122,22 @@ export default function RootLayout({
   const schema = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
+
     name: "Rivora Holidays",
+
     url: "https://www.rivoraholidays.com",
-    logo: "https://www.rivoraholidays.com/logo.png",
+
+    logo: "https://www.rivoraholidays.com/logo-new.png",
+
     image: "https://www.rivoraholidays.com/hero.jpg",
+
     description:
       "Premium Domestic & International Tour Packages, Flights, Hotels, Visa Assistance, Corporate Travel, MICE and Destination Weddings.",
+
     telephone: "+91-9828260533",
+
     email: "info@rivoraholidays.com",
+
     address: {
       "@type": "PostalAddress",
       streetAddress: "349, Vaishno Vihar",
@@ -138,7 +146,9 @@ export default function RootLayout({
       postalCode: "302029",
       addressCountry: "IN",
     },
+
     areaServed: "Worldwide",
+
     priceRange: "₹₹",
   };
 
@@ -148,6 +158,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
       <body className="bg-[#05070d] text-white antialiased">
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -155,7 +166,9 @@ export default function RootLayout({
           }}
         />
 
-        {children}        {/* Google Analytics GA4 */}
+        {children}
+
+        {/* Google Analytics GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8KFXRS0Q1H"
           strategy="afterInteractive"
@@ -172,6 +185,7 @@ export default function RootLayout({
             });
           `}
         </Script>
+
       </body>
     </html>
   );
