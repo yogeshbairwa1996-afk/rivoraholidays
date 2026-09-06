@@ -18,33 +18,41 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Rivora Holidays | Best Travel Agency in Jaipur | Tour Packages, Flights & Visa",
+      "Rivora Holidays | Premium Travel Agency | Tour Packages, Flights & Visa",
     template: "%s | Rivora Holidays",
   },
 
   description:
-    "Rivora Holidays is a trusted travel agency in Jaipur offering Domestic & International Tour Packages, Flight Bookings, Hotel Reservations, Visa Assistance, Honeymoon Packages, Group Tours, FIT Packages, Corporate Travel, MICE and Destination Weddings.",
+    "Rivora Holidays is a premium travel agency offering personalised Domestic & International Tour Packages, Flight Bookings, Hotel Reservations, Visa Assistance, Honeymoon Holidays, Group Travel, FIT Packages, Corporate Travel, Events and Destination Weddings.",
 
   keywords: [
     "Rivora Holidays",
-    "Best Travel Agency Jaipur",
-    "Travel Agency Jaipur",
-    "Tour Operator Jaipur",
+    "Premium Travel Agency",
+    "Luxury Travel Agency",
+    "Travel Agency",
+    "Tour Operator",
     "Holiday Packages",
     "Domestic Tour Packages",
     "International Tour Packages",
+    "Luxury Holidays",
+    "Customised Holiday Packages",
+    "International Travel Packages",
+    "Domestic Holidays",
     "Dubai Tour Package",
     "Thailand Tour Package",
     "Bali Tour Package",
     "Singapore Tour Package",
     "Maldives Tour Package",
     "Vietnam Tour Package",
-    "Flight Booking Jaipur",
-    "Hotel Booking Jaipur",
+    "Flight Booking",
+    "Hotel Booking",
     "Visa Assistance",
+    "Honeymoon Packages",
+    "Group Travel",
+    "FIT Travel",
     "Corporate Travel",
-    "Destination Weddings",
     "MICE",
+    "Destination Weddings",
   ],
 
   authors: [
@@ -54,9 +62,8 @@ export const metadata: Metadata = {
   ],
 
   creator: "Rivora Holidays",
-
   publisher: "Rivora Holidays",
-
+  applicationName: "Rivora Holidays",
   category: "Travel",
 
   alternates: {
@@ -76,10 +83,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Rivora Holidays | Best Travel Agency in Jaipur",
+    title: "Rivora Holidays | Premium Travel Agency",
 
     description:
-      "Premium Domestic & International Tour Packages, Flights, Hotels, Visa Assistance, Corporate Travel, MICE and Destination Weddings.",
+      "Premium Domestic & International Travel Experiences, Tour Packages, Flights, Hotels, Visa Assistance, Group Travel, Corporate Travel, Events and Destination Weddings.",
 
     url: "https://www.rivoraholidays.com",
 
@@ -94,16 +101,16 @@ export const metadata: Metadata = {
         url: "/hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Rivora Holidays",
+        alt: "Rivora Holidays - Premium Travel Agency",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Rivora Holidays",
+    title: "Rivora Holidays | Premium Travel Agency",
     description:
-      "Premium Domestic & International Tour Packages.",
+      "Premium Domestic & International Travel Experiences, Tour Packages, Flights, Hotels, Visa Assistance and customised holidays.",
     images: ["/hero.jpg"],
   },
 
@@ -125,6 +132,8 @@ export default function RootLayout({
 
     name: "Rivora Holidays",
 
+    alternateName: "Rivora",
+
     url: "https://www.rivoraholidays.com",
 
     logo: "https://www.rivoraholidays.com/logo-new.png",
@@ -132,7 +141,7 @@ export default function RootLayout({
     image: "https://www.rivoraholidays.com/hero.jpg",
 
     description:
-      "Premium Domestic & International Tour Packages, Flights, Hotels, Visa Assistance, Corporate Travel, MICE and Destination Weddings.",
+      "Rivora Holidays is a premium travel agency offering Domestic & International Tour Packages, Flight Bookings, Hotels, Visa Assistance, Honeymoon Holidays, Group Travel, FIT Packages, Corporate Travel, Events and Destination Weddings.",
 
     telephone: "+91-9828260533",
 
@@ -149,6 +158,21 @@ export default function RootLayout({
 
     areaServed: "Worldwide",
 
+    serviceType: [
+      "Domestic Tour Packages",
+      "International Tour Packages",
+      "Flight Booking",
+      "Hotel Booking",
+      "Visa Assistance",
+      "Honeymoon Holidays",
+      "Group Travel",
+      "FIT Travel",
+      "Corporate Travel",
+      "MICE",
+      "Events",
+      "Destination Weddings",
+    ],
+
     priceRange: "₹₹",
   };
 
@@ -158,7 +182,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
       <body className="bg-[#05070d] text-white antialiased">
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -177,7 +200,11 @@ export default function RootLayout({
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+
             gtag('js', new Date());
 
             gtag('config', 'G-8KFXRS0Q1H', {
@@ -185,7 +212,6 @@ export default function RootLayout({
             });
           `}
         </Script>
-
       </body>
     </html>
   );
