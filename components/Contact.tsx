@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -105,9 +106,9 @@ export default function Contact() {
                 </h4>
 
                 <p className="mt-2 leading-8 text-gray-300">
-                  349, Vaishno Vihar,
-                  Block-B, Sanganer,
-                  Jaipur, Rajasthan – 302029
+                  205, Shri Balaji Heights,
+                  Behind Alankar College, Sirsi Road,
+                  Jaipur, Rajasthan – 302012, India.
                 </p>
 
               </div>
@@ -150,7 +151,9 @@ export default function Contact() {
 
             </div>
 
-          </div>          <div className="glass-card rounded-3xl p-10">
+          </div>
+
+          <div className="glass-card rounded-3xl p-10">
 
             <h3 className="text-3xl font-bold">
               Send an Enquiry
