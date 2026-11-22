@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -121,8 +122,9 @@ export default function Footer() {
                 />
 
                 <p className="leading-7 text-gray-400">
-                  349, Vaishno Vihar, Block-B,<br />
-                  Sanganer, Jaipur, Rajasthan
+                  205, Shri Balaji Heights,<br />
+                  Behind Alankar College, Sirsi Road,<br />
+                  Jaipur, Rajasthan - 302012, India.
                 </p>
 
               </div>
